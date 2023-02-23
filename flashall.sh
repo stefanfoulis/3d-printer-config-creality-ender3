@@ -36,11 +36,11 @@ echo "[${CFG}] stopping klipper_mcu"
 sudo service klipper_mcu stop
 echo "[${CFG}] flashing"
 make KCONFIG_CONFIG=${PWD}/.config-${CFG} OUT=out/ flash
-echo "[${CFG}] updating klipper_mcu startup script"
-sudo cp "${PWD}/scripts/klipper-mcu-start.sh" /etc/init.d/klipper_mcu
-sudo update-rc.d klipper_mcu defaults
+echo "[${CFG}] updating klipper_mcu systemd startup script"
+sudo cp "${PWD}/scripts/klipper-mcu.service" /etc/systemd/system/
+sudo systemctl enable klipper-mcu.service
 echo "[${CFG}] starting klipper_mcu"
-sudo service klipper_mcu start
+sudo systemctl start klipper-mcu.service
 
 
 
