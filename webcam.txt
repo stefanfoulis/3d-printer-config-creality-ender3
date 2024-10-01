@@ -1,2 +1,0 @@
-camera="raspi"
-camera_streamer=mjpeg
