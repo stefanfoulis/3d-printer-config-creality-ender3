@@ -2,3 +2,6 @@ printer-*.cfg
 KlipperScreen.log
 .moonraker.conf.bkp
 KAMP
+# mainsail.cfg is actually just a symlink elsewhere and shouldn't ever be edited directly
+mainsail.cfg
+moonraker.conf.backup
